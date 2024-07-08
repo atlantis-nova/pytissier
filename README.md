@@ -5,18 +5,20 @@ Our goal is simple: digitalize pastry in an open-source fashion.
 
 ## WORK IN PROGRESS
 
-- **supported fundamental recipes**
-Currently, the library only supports the recipe creation of **shortcrust pastry**, other fundamental recipes will be added soon.
+- **we are looking for pastry chefs and engineers**
+We are thrilled to accept the contribution of pastry chefs and passionate engineer who wish to join the project
+- **support for more recipes**
+Currently, the library only supports a few of the most important recipes, other fundamental recipes will be added soon.
 - **additional features**
 once the library has become more solid we plan to deploy it using setuptools.py
 
 ## supported functions
 
-- **pychef.recipe_generator.shortcrust_pastry**
-- **pychef.recipe_generator.puff_pastry**
+- **shortcrust_pastry**
+- **puff_pastry**
 
 ## example usage
-The following is an example usage on how to compute the liquids for a **shortcrust pastry** recipe. Usually, each recipe differs in terms on inputs and output:
+The following is an example of how to compute the liquids for a **shortcrust pastry** recipe. Usually, each recipe differs in terms on inputs and output:
 ```
 from pytissier import pychef
 
@@ -38,3 +40,6 @@ Output:
     'water': 125
 }
 ```
+
+### about the project
+Managed and curated by Michelangiolo Mazzeschi
