@@ -5,11 +5,11 @@ Our goal is simple: digitalize pastry in an open-source fashion.
 
 ## WORK IN PROGRESS
 
-- **we are looking for pastry chefs and engineers**
+- **we are looking for pastry chefs and engineers**<br>
 We are thrilled to accept the contribution of pastry chefs and passionate engineer who wish to join the project
-- **support for more recipes**
+- **support for more recipes**<br>
 Currently, the library only supports a few of the most important recipes, other fundamental recipes will be added soon.
-- **additional features**
+- **additional features**<br>
 once the library has become more solid we plan to deploy it using setuptools.py
 
 ## supported functions
