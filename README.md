@@ -19,8 +19,9 @@ mychef = pychef.recipe_generator()
 mychef.shortcrust_pastry(
     butter_percentage=0.50, 
     sugar_percentage=0.50, 
-    sugar_type='granulated_sugar', 
-    liquid_type='water'
+    dough_type='regular',
+    sugar_type='icing', 
+    liquid_type='eggwhites'
 )
 
 Output:
