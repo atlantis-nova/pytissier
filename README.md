@@ -1,6 +1,7 @@
 # 🥐 pytissier
 
 The first python library for the implementation of **computational pastry**
+Our goal is simple: digitalize pastry in an open-source fashion.
 
 ## WORK IN PROGRESS
 
