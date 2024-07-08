@@ -86,9 +86,66 @@ class main_fn():
                     case 'granulated':
                         raise Exception("whipped dough does not support granulated sugar")
                 
-        return {
+        recipe = {
             'flower' : flower,
             'butter' : butter,
             sugar_type : sugar,
             liquid_type : int(liquids)
         }
+
+        return recipe
+    
+    def puff_pastry(self, butter_percentage, hydration, salt=None, butter_block_flour=None, dough_extra_butter=False):
+
+        # flour
+        dough_flour = 1000
+        butter_block_flour = 0
+
+        # butter
+        dough_butter = 0
+        butter_block_butter = dough_flour * butter_percentage
+
+        # salt
+        if salt is None:
+            salt = 2*((100*hydration-50)+10)-10
+        
+        # we factorize butter in its original ingredients
+        dough_water = int(dough_flour*hydration) - int(butter_block_butter*0.15)
+
+        if dough_extra_butter == False:
+            # flour is added in the butter_block 
+            flour_max = dough_water*2
+            dough_flour = dough_flour - flour_max
+            butter_block_flour = flour_max
+        
+            if butter_block_flour is not None:
+                raise Exception('if butter cannot be added in dough, neither can flour be added in butter_block')
+
+        if dough_extra_butter == True:
+            # butter is added in the dough
+            flour_max = dough_water*2
+            flour_non_hydrated = dough_flour - flour_max
+            dough_butter = int(flour_non_hydrated/2)
+            butter_block_butter = butter_block_butter - dough_butter
+
+            if butter_block_flour is not None:
+                butter_block_flour = int(butter_block_butter*butter_block_flour)
+                dough_flour -= butter_block_flour
+                transferable_butter = dough_butter - int((dough_flour - flour_max)/2)
+                dough_butter -= transferable_butter
+                butter_block_butter += transferable_butter
+
+        recipe = {
+            "dough" : {
+                "flour" : int(dough_flour),
+                "butter" : int(dough_butter),
+                "water" : int(dough_water),
+                "salt" : int(salt),
+            },
+            "butter_block" : {
+                "flour" : int(butter_block_flour),
+                "butter" : int(butter_block_butter),
+            }
+        }
+
+        return recipe

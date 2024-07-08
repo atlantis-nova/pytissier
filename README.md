@@ -2,14 +2,19 @@
 
 The first python library for the implementation of **computational pastry**
 
-### WORK IN PROGRESS
+## WORK IN PROGRESS
 
-- supported fundamental recipes
+- **supported fundamental recipes**
 Currently, the library only supports the recipe creation of **shortcrust pastry**, other fundamental recipes will be added soon.
-- additional features
+- **additional features**
 once the library has become more solid we plan to deploy it using setuptools.py
 
-### usage
+## supported functions
+
+- **pychef.recipe_generator.shortcrust_pastry**
+- **pychef.recipe_generator.puff_pastry**
+
+## example usage
 The following is an example usage on how to compute the liquids for a **shortcrust pastry** recipe. Usually, each recipe differs in terms on inputs and output:
 ```
 from pytissier import pychef
